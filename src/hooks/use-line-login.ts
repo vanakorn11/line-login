@@ -33,7 +33,6 @@ function useLineLogin() {
       }
     }
     catch (error) {
-      console.log(error)
     }
   }
 
