@@ -29,7 +29,7 @@ function useLineLogin() {
 
       if (profile && token) {
         login(profile.displayName, token)
-        navigate("/")
+        navigate('/')
       }
     }
     catch (error) {
