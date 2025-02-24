@@ -7,10 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:pre-commit": "eslint --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky",
-    "lint-staged": "lint-staged --config lint-staged.config.js"
+    "prepare": "husky"
   },
   "dependencies": {
     "@line/liff": "^2.25.1",
@@ -37,5 +37,16 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint:fix",
+      "yarn lint:pre-commit"
+    ]
   }
 }

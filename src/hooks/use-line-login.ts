@@ -29,11 +29,11 @@ function useLineLogin() {
 
       if (profile && token) {
         login(profile.displayName, token)
-        navigate('/')
+        navigate("/")
       }
     }
+    // eslint-disable-next-line unused-imports/no-unused-vars
     catch (error) {
-      console.log(error)
     }
   }
 
